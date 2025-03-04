@@ -4,3 +4,6 @@ go_fuzz FUZZ TIME='10s' PKG='': (go_test PKG _EXTRALDFLAGS "-fuzztime" TIME "-fu
 [private]
 go_generate SELECTOR *FLAGS:
     go generate -v {{FLAGS}} {{SELECTOR}}
+[private]
+go_build BIN PKG *FLAGS:
+    env GO111MODULE=on GOOS=
